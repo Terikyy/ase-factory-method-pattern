@@ -17,10 +17,10 @@ export class ApplePayProvider extends PaymentProvider {
     /**
      * Processes payment via Apple Pay
      * Simulates fast API call (800ms) with 95% success rate
-     * @param amount - The amount to charge
+     * @param _amount - The amount to charge (unused in mock implementation)
      * @returns Promise resolving to PaymentResult
      */
-    async processPayment(amount: number): Promise<PaymentResult> {
+    async processPayment(_amount: number): Promise<PaymentResult> {
         // Simulate API delay
         await this.simulateDelay(800);
 

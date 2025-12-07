@@ -17,10 +17,10 @@ export class PayPalProvider extends PaymentProvider {
     /**
      * Processes payment via PayPal
      * Simulates medium-speed API call (1500ms) with 90% success rate
-     * @param amount - The amount to charge
+     * @param _amount - The amount to charge (unused in mock implementation)
      * @returns Promise resolving to PaymentResult
      */
-    async processPayment(amount: number): Promise<PaymentResult> {
+    async processPayment(_amount: number): Promise<PaymentResult> {
         // Simulate API delay
         await this.simulateDelay(1500);
 
