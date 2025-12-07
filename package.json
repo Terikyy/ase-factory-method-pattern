@@ -6,7 +6,8 @@
   "scripts": {
     "build": "tsc",
     "watch": "tsc --watch",
-    "clean": "rm -rf public/js"
+    "clean": "rm -rf public/js",
+    "test": "echo 'Tests will be added here' && exit 0"
   },
   "devDependencies": {
     "typescript": "^5.3.3"
