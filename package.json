@@ -1,0 +1,19 @@
+{
+  "name": "ase-factory-method-pattern",
+  "version": "1.0.0",
+  "description": "Factory Method Pattern Demo - TechShop",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "clean": "rm -rf public/js"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  },
+  "keywords": [
+    "factory-method",
+    "design-pattern",
+    "typescript"
+  ]
+}
