@@ -1,0 +1,194 @@
+/* ========== COMPONENTS ========== */
+/* Product Cards, Buttons, Cart, Forms */
+
+/* Cart Icon */
+.cart-icon {
+    position: absolute;
+    top: var(--spacing-lg);
+    right: 0;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-icon img {
+    width: 28px;
+    height: 28px;
+    filter: brightness(0) saturate(100%) invert(98%) sepia(98%) saturate(0%) hue-rotate(338deg) brightness(102%) contrast(96%);
+}
+
+.cart-icon:hover {
+    transform: scale(1.1);
+    opacity: 0.85;
+}
+
+.cart-badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: var(--accent-primary);
+    color: var(--text-primary);
+    font-size: 0.75rem;
+    font-weight: 600;
+    min-width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 4px;
+}
+
+/* Product Grid */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+/* Product Cards */
+.product-card {
+    background: var(--bg-secondary);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid var(--border-color);
+}
+
+.product-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.product-image {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    display: block;
+}
+
+.product-info {
+    padding: var(--spacing-md);
+}
+
+.product-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-xs);
+    letter-spacing: -0.01em;
+}
+
+.product-price {
+    color: var(--text-secondary);
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: var(--spacing-sm);
+}
+
+/* Buttons */
+.add-to-cart-btn {
+    width: 100%;
+    background: var(--accent-primary);
+    color: var(--text-primary);
+    border: none;
+    padding: 0.75rem;
+    border-radius: var(--radius);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+    font-family: inherit;
+}
+
+.add-to-cart-btn:hover {
+    opacity: 0.85;
+}
+
+.add-to-cart-btn:active {
+    opacity: 0.7;
+}
+
+.pay-btn {
+    width: 100%;
+    background: var(--accent-primary);
+    color: var(--text-primary);
+    border: none;
+    padding: 1rem;
+    border-radius: var(--radius);
+    font-size: 1.125rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+    font-family: inherit;
+}
+
+.pay-btn:hover {
+    opacity: 0.85;
+}
+
+.pay-btn:active {
+    opacity: 0.7;
+}
+
+.clear-cart-btn {
+    width: 100%;
+    background: transparent;
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+    padding: 0.75rem;
+    border-radius: var(--radius);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+}
+
+.clear-cart-btn:hover {
+    border-color: var(--text-secondary);
+    color: var(--text-primary);
+}
+
+.clear-cart-btn:active {
+    opacity: 0.7;
+}
+
+/* Forms */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-sm);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    font-weight: 400;
+}
+
+.form-group input,
+.form-group select {
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 0.75rem;
+    color: var(--text-primary);
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+}

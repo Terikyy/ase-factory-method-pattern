@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout - TechShop</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
     <header>
@@ -68,39 +68,33 @@
                     <div class="order-section">
                         <h2 class="section-title">Your Order</h2>
                         
-                        <div class="order-items">
-                            <div class="order-item">
-                                <img src="images/laptop.jpg" alt="Laptop" class="item-image">
-                                <span class="item-name">Laptop</span>
-                                <span class="item-price">999.99€</span>
-                            </div>
-                            <div class="order-item">
-                                <img src="images/headphones.jpg" alt="Wireless Headphones" class="item-image">
-                                <span class="item-name">Wireless Headphones</span>
-                                <span class="item-price">149.99€</span>
-                            </div>
-                            <div class="order-item">
-                                <img src="images/keyboard.jpg" alt="Mechanical Keyboard" class="item-image">
-                                <span class="item-name">Mechanical Keyboard</span>
-                                <span class="item-price">129.99€</span>
-                            </div>
-                            <div class="order-total">
-                                <span class="total-label">Total</span>
-                                <span class="total-price">1279.97€</span>
-                            </div>
+                        <div id="empty-cart-message" class="empty-cart-message hidden">
+                            Your cart is empty
+                        </div>
+                        
+                        <div id="cart-items-container" class="order-items">
+                            <!-- Cart items will be dynamically inserted here -->
+                        </div>
+                        
+                        <div class="order-total">
+                            <span class="total-label">Total</span>
+                            <span class="total-price"><span id="total-amount">0.00</span>€</span>
                         </div>
 
                         <div class="payment-section">
+                            <button id="clear-cart-btn" class="clear-cart-btn">Clear Cart</button>
+                            
                             <div class="form-group">
-                                <label for="payment-method">Payment Method</label>
-                                <select id="payment-method" name="payment-method">
+                                <label for="payment-select">Payment Method</label>
+                                <!-- TODO: Available payment methods need to be rendered via checkout.ts and not hardcoded -->
+                                <select id="payment-select" name="payment-method">
                                     <option value="PayPal">PayPal</option>
                                     <option value="ApplePay">ApplePay</option>
                                     <option value="Credit Card">Credit Card</option>
                                 </select>
                             </div>
 
-                            <button id="pay-button" class="pay-btn">Pay with PayPal</button>
+                            <button id="payment-btn" class="pay-btn">Pay with PayPal</button>
                         </div>
                     </div>
                 </div>
@@ -112,21 +106,6 @@
         Advanced Software Engineering - Factory Method Pattern Implementation
     </footer>
 
-    <script>
-        // Update payment button text based on selected payment method
-        const paymentSelect = document.getElementById('payment-method');
-        const payButton = document.getElementById('pay-button');
-
-        paymentSelect.addEventListener('change', function() {
-            payButton.textContent = `Pay with ${this.value}`;
-        });
-
-        // Handle payment button click
-        payButton.addEventListener('click', function() {
-            const selectedMethod = paymentSelect.value;
-            console.log(`Payment method selected: ${selectedMethod}`);
-            // Actual payment logic will be implemented later
-        });
-    </script>
+    <script type="module" src="js/checkout.js"></script>
 </body>
 </html>
