@@ -28,20 +28,27 @@ COPY package*.json ./
 # Install dependencies (including dev dependencies for testing)
 RUN npm install
 
-# Copy built files and test files
-COPY --from=builder /app/public ./public
+# Copy configuration files
+COPY tsconfig.json ./
+COPY jest.config.js ./
+
+# Copy source files and test files
+COPY src ./src
 COPY tests ./tests
 
-# Run tests (this will be executed during build)
-RUN npm test || echo "No tests configured yet"
+# Run tests
+RUN npm test
 
 # Production stage
-FROM nginx:alpine
+FROM nginx:alpine AS production
 
 # Remove default nginx files
 RUN rm -rf /usr/share/nginx/html/*
 
-# Copy built application
+# Ensure tests pass before building production image
+COPY --from=tester /app/package.json /tmp/test-marker.json
+
+# Copy built application from builder stage
 COPY --from=builder /app/public /usr/share/nginx/html
 
 # Copy nginx configuration

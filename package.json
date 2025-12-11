@@ -7,9 +7,15 @@
     "build": "tsc",
     "watch": "tsc --watch",
     "clean": "rm -rf public/js",
-    "test": "echo 'Tests will be added here' && exit 0"
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
   },
   "devDependencies": {
+    "@jest/globals": "^30.0.0",
+    "@types/jest": "^30.0.0",
+    "jest": "^30.0.0",
+    "ts-jest": "^29.2.0",
     "typescript": "^5.3.3"
   },
   "keywords": [

@@ -22,7 +22,7 @@ The application is containerized using Docker with a multi-stage build process:
 
 The Dockerfile uses a multi-stage build:
 - **Builder stage**: Compiles TypeScript to JavaScript
-- **Tester stage**: Runs tests (to be implemented)
+- **Tester stage**: Runs tests
 - **Production stage**: Serves the app with Nginx
 
 ### Local Setup (Without Docker)
@@ -86,14 +86,46 @@ The project follows the Factory Method pattern with:
 No external runtime dependencies - this is a vanilla TypeScript project demonstrating pure Factory Method pattern implementation without frameworks or libraries.
 
 **Dev Dependencies:**
-- **TypeScript**: Type checking and compilation to JavaScript
+- **TypeScript** (^5.3.3): Type checking and compilation to JavaScript
+- **Jest** (^30.0.0): Testing framework for unit tests
+- **ts-jest** (^29.2.0): TypeScript preprocessor for Jest
+- **@jest/globals** (^30.0.0): Jest global functions and types
+- **@types/jest** (^30.0.0): TypeScript type definitions for Jest
 
 ## Testing
 
-Testing infrastructure is in place but tests are pending implementation. Run:
+The project includes comprehensive unit tests covering the Factory Method pattern implementation.
+
+### Test Structure
+
+- **tests/factories.test.ts**: Tests for all payment factory classes (9 tests)
+  - Verifies correct instantiation of payment providers
+  - Tests polymorphic behavior of factories
+  - Ensures factories create new instances on each call
+
+- **tests/providers.test.ts**: Tests for all payment provider implementations (18 tests)
+  - Validates payment processing logic
+  - Tests transaction ID generation
+  - Verifies processing delays and timing characteristics
+  - Compares provider performance
+
+- **tests/service.test.ts**: Tests for PaymentService integration (18 tests)
+  - Tests integration with all factory types
+  - Validates amount validation (zero/negative amounts)
+  - Tests console logging and formatting
+  - Verifies async behavior and error handling
+
+### Running Tests
 
 ```bash
+# Run all tests
 npm test
+
+# Run tests in watch mode
+npm run test:watch
+
+# Run tests with coverage report
+npm run test:coverage
 ```
 
 ## License
