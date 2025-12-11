@@ -1,5 +1,8 @@
 # Factory Method Pattern - TechShop
 
+[![GitHub](https://img.shields.io/badge/GitHub-black?logo=github&logoColor=white)](https://github.com/Terikyy/ase-factory-method-pattern) 
+[![Live Demo - Heroku](https://img.shields.io/badge/Live%20Demo-Heroku-430098?logo=heroku&logoColor=white)](https://ase-factory-method-pattern-3145dcfade07.herokuapp.com)
+
 Implementation of the Factory Method design pattern for Advanced Software Engineering at DHBW Stuttgart.
 
 ## Overview
@@ -59,7 +62,7 @@ The Dockerfile uses a multi-stage build:
   - **Credit Card**: Simulated credit card payment processing
   - **Apple Pay**: Simulated Apple Pay payment processing
 - **Factory Method Pattern**: Each payment provider is created through its dedicated factory
-- **Checkout Flow**: Complete billing form and order summary with payment processing
+- **Checkout Flow**: Complete billing form and order summary with mock payment processing
 
 ## Architecture
 
@@ -88,11 +91,11 @@ The project follows the Factory Method pattern with:
 No external runtime dependencies - this is a vanilla TypeScript project demonstrating pure Factory Method pattern implementation without frameworks or libraries.
 
 **Dev Dependencies:**
-- **TypeScript** (^5.3.3): Type checking and compilation to JavaScript
-- **Jest** (^30.0.0): Testing framework for unit tests
-- **ts-jest** (^29.2.0): TypeScript preprocessor for Jest
-- **@jest/globals** (^30.0.0): Jest global functions and types
-- **@types/jest** (^30.0.0): TypeScript type definitions for Jest
+- **TypeScript**: Type checking and compilation to JavaScript
+- **Jest**: Testing framework for unit tests
+- **ts-jest**: TypeScript preprocessor for Jest
+- **@jest/globals**: Jest global functions and types
+- **@types/jest**: TypeScript type definitions for Jest
 
 ## Testing
 
