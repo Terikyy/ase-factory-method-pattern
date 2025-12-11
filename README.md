@@ -6,6 +6,8 @@ Implementation of the Factory Method design pattern for Advanced Software Engine
 
 This project demonstrates the **Factory Method** design pattern through a web-based e-commerce application (TechShop) that processes payments through multiple payment providers (PayPal, Credit Card, Apple Pay).
 
+🚀 **Live Demo**: [TechShop Demo](https://ase-factory-method-pattern-3145dcfade07.herokuapp.com)
+
 ## Setup
 
 ### Docker Setup (Recommended)
