@@ -209,10 +209,31 @@
     }
     
     .checkout-card {
-        padding: var(--spacing-lg);
+        padding: var(--spacing-md);
     }
     
     .checkout-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .billing-form {
+        width: 100%;
+        overflow: hidden;
+    }
+    
+    .billing-form .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .billing-form .form-group {
+        width: 100%;
+        min-width: 0;
+    }
+    
+    .billing-form .form-group input,
+    .billing-form .form-group select {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
     }
 }
